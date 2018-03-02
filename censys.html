@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="https://censys.io/static/css/bootstrap.min.css" />
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="https://censys.io/static/css/local.css" />
+      <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="https://censys.io/static/css/nv.d3.min.css" />
+      <link rel="icon" href="https://censys.io/static/img/icon.png" />
+      
+        <title>Censys</title>
+      
+    
+    
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Censys" />
+      <meta property="og:url" content="https://censys.io/login" />
+      <meta property="og:site_name" content="Censys" />
+      <meta property="og:image" content="https://censys.io/static/img/censys-small.png" />
+      <meta property="og:image:height" content="102" />
+      <meta property="og:image:width" content="88" />
+      <meta property="og:image" content="https://censys.io/static/img/icon.png" />
+      <meta property="og:image:height" content="435" />
+      <meta property="og:image:width" content="435" />
+      <meta property="og:image" content="https://censys.io/static/img/censys.png" />
+      <meta property="og:image:height" content="471" />
+      <meta property="og:image:width" content="1675" />
+      
+        <meta property="og:description" content="Censys is a search engine that allows computer scientists to ask questions about the devices and networks that compose the Internet. Driven by Internet-wide scanning, Censys lets researchers find specific hosts and create aggregate reports on how devices, websites, and certificates are configured and deployed." />
+      
+    
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container" id="topbar-content">
+        
+        <a class="navbar-brand" href="/"><img height="20px" src="https://censys.io/static/img/censys_white.png" style="padding-left: 3px; padding-top: 1px"></img></a>
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://censys.io/about">About</a></li>
+            <li><a href="https://censys.io/">Search</a></li>
+            <li><a href="https://censys.io/reports">Reports</a></li>
+            
+            <li><a href="https://censys.io/api">API</a></li>
+            <li><a href="https://censys.io/data">Raw Data</a></li>
+            
+            
+            <li><a href="https://censys.io/login">Login</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+    
+<script>
+function ipv4() {
+  document.getElementById("search").action="/ipv4";
+  document.getElementById("search").submit();
+}
+
+function websites() {
+  document.getElementById("search").action="/domain";
+  document.getElementById("search").submit();
+}
+
+function certificates() {
+  document.getElementById("search").action="/certificates";
+  document.getElementById("search").submit();
+}
+</script>
+<div class="search-bar query-below-blue-bar query">
+  <div class="container">
+    
+      <form method="get" id="search" action="/ipv4">
+    
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="q" id="q" value="">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Search <span class="caretpadding"><span class="caret"></span></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#" onclick="ipv4()">
+            <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+            IPv4 Hosts</a>
+          </li>
+          <li><a href="#" onclick="websites()">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            Websites</a>
+          </li>
+          <li><a href="#" onclick="certificates()">
+		    <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Certificates</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+        </div>
+      </form>
+  </div>
+</div>
+<div class="container">
+  
+<row>
+     
+       
+       
+       
+       
+     
+
+    
+<br/>
+<br/>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-body login-box">
+      <div class="col-md-8">
+        <h1>Censys Login</h1>
+
+	<p><b>Censys is freely available to researchers.</b> However we require
+	users to <b><a href="/register">create an account</a></b>
+	and adhere to our <b><a href="/tos">Terms of Service</a></b> to prevent abuse.</p>
+
+        <p>If you find yourself restricted by the default rate limit or search syntax, please contact us.
+        We will happily provide authenticated researchers with full SQL access and less restrictive
+        API limits.</p>
+        
+        <p><a href="https://censys.io/resetpassword">Forgot
+        Password?</a> Please <a href="mailto:requests@censys.io">contact us</a>
+        with any other login issues.</p> </div>
+
+      <div class="col-md-4">
+        <form action="https://censys.io/login" method="post" class="login-form">
+          <input type="hidden" name="csrf_token" value="58c8f0e4e2248e16a15ecfce11fdf1d2383d2248">
+          <div class="form-group">
+            <input type="hidden" name="came_from" value= "https://censys.io/query/export/ahZzfnN0ZWFkeS1jaXJjdWl0LTkxNDE3cjsLEhFCaWdRdWVyeUV4ZWN1dGlvbiIkODkxYjgzYWItOGQ0MS0xMWU3LWExZmItMjM0ZGFiNmU5YjA4DA"/>
+            <input type="text" name="login" class="form-control" id="login"
+            placeholder="Username" value="" required="true">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control"
+            id="password" placeholder="Password" value="" required="true">
+          </div>
+          <button type="submit" class="btn btn-primary col-md-12 col-sm-12 col-xs-12">Login</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</row>
+
+</div>
+
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="pull-right">
+            <ul>
+            <li class="right">2017-09-01 11:31:57</li>
+            
+            <li class="right">103.221.141.142</li>
+            
+            
+
+            <ul>
+        </div>
+        <ul>
+          <li><a href="/about">About Censys</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="https://groups.google.com/a/censys.io/forum/#!forumsearch/">Google Groups</a></li>
+          
+          <li><a href="/tos">Terms of Service</a></li>
+
+        </ul>
+        <br/>
+        <p>Copyright 2016 Regents of the University of Michigan</p>
+      </div>
+    </footer>
+	<script src="https://use.fontawesome.com/d8e6a04603.js"></script>
+    <script charset="utf-8" src="https://censys.io/static/js/jquery-1.11.3.min.js"></script>
+    <script charset="utf-8" src="https://censys.io/static/js/bootstrap.min.js"></script>
+    <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script charset="utf-8" src="https://censys.io/static/js/nv.d3.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+
+    
+
+<script charset="utf-8" src="https://censys.io/static/js/jquery.autocomplete.min.js"></script>
+<script>
+if ("" == "certificates") {
+	$.ajax({url:"/certificates/_autocomplete",
+		success:function(data) {
+			console.log(data);
+			$('#q').autocomplete({
+			    lookup: data["data"],
+				groupBy: 'category',
+				delimiter: ' ',
+				maxHeight: 600,
+				tabDisabled: true,
+				minChars:1,
+				beforeRender: function(_,suggestions) {
+					if (suggestions) {
+						$("#q").css("border-bottom-left-radius", "0pt");
+					}
+				},
+				onHide: function(_) {
+					$("#q").css("border-bottom-left-radius", "4pt");
+				},
+				onSelect: function(suggestion) {
+					this.focus();
+					this.value = this.value;
+				}
+			});
+	}});
+}
+</script>
+
+
+    
+    
+
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '561e72925dd0537fc60056ea');
+        t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+        t.src = 'https://track.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-73424227-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+  </body>
+</html>
